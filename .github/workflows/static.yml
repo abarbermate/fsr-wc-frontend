@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print image names
-        run: ls ./site/gallery/*.@(jpg|jpeg|png) > ./site/gallery/files.txt
+        run: find ./site/gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./site/gallery/files.txt
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
