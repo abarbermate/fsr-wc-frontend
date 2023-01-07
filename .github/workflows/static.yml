@@ -28,6 +28,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Current dir
+        run: pwd
+      - name: List files
+        run: ls
       - name: Print image names
         run: find ./site/gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./site/gallery/files.txt
       - name: Checkout
