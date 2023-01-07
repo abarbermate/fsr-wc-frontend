@@ -28,14 +28,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Current dir
         run: pwd
       - name: List files
         run: ls -la
       - name: Print image names
         run: find ./site/gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./site/gallery/files.txt
-      - name: Checkout
-        uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
