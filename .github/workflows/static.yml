@@ -22,6 +22,22 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
+  before_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Save image names to file
+        run: cd site && find ./gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./gallery/files.txt && cd ..
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1.6.0
+        with:
+          file-path: site/gallery/files.txt
+          commit-msg: Update files.txt
+          github-token: ${{ secrets.TOKEN }}
+      - name: Check file
+        run: cat ./site/gallery/files.txt
+        
   deploy:
     environment:
       name: github-pages
@@ -30,8 +46,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Save image names to file
-        run: cd site && find ./gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./gallery/files.txt && cd ..
       - name: Check file
         run: cat ./site/gallery/files.txt
       - name: Setup Pages
