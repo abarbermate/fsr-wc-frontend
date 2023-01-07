@@ -4,6 +4,8 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ["main"]
+    paths-ignore:
+      - 'site/gallery/files.txt'
   workflow_dispatch:
 
 permissions:
