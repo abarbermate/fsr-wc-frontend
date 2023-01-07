@@ -1,2 +1,1 @@
-./site/gallery/FB_action-0864 copy.jpg
-./site/gallery/FB_action-0864.jpg
+./gallery/FB_action-0864.jpg
