@@ -28,6 +28,16 @@ window.onload = async () => {
 		})
 	})
 
+	document.getElementById("hamburger").onclick = () => {
+		console.log(document.getElementById("mobile-menu").style.height)
+		if (document.getElementById("mobile-menu") && document.getElementById("mobile-menu").style.height === 0) {
+			document.getElementById("mobile-menu").style.height = "auto"
+		}
+		if (document.getElementById("mobile-menu") && document.getElementById("mobile-menu").style.height === "auto") {
+			document.getElementById("mobile-menu").style.height = 0
+		}
+	}
+
 	document.onclick = (e) => {
 		const popup = document.getElementById("popup").getBoundingClientRect()
 		if (opened) {

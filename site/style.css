@@ -61,3 +61,22 @@ dialog::backdrop {
 	max-width: 100%;
 	width: 90vw;
 }
+
+i {
+	padding-left: 4px;
+}
+
+#mobile-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0px 0px 10px black;
+	overflow: hidden;
+}
+
+#mobile-menu a {
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #00000055;
+}
