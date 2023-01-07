@@ -67,16 +67,18 @@ i {
 }
 
 #mobile-menu {
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 10px black;
+	left: 0;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
-	left: 0;
 	width: 100%;
-	box-shadow: 0px 0px 10px black;
-	overflow: hidden;
+	transition: 0.4s;
 }
 
 #mobile-menu a {
+	border-bottom: 1px solid #00000055;
 	display: block;
 	width: 100%;
-	border-bottom: 1px solid #00000055;
 }
