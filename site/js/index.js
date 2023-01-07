@@ -9,4 +9,12 @@ window.onload = () => {
 			}
 		}
 	}
+
+	document.onclick = (e) => {
+		if (e.target.id !== "hamburger" && e.target.id !== "bars") {
+			if (document.getElementById("mobile-menu") && document.getElementById("mobile-menu").style.maxHeight === "197.5px") {
+				document.getElementById("mobile-menu").style.maxHeight = 0
+			}
+		}
+	}
 }
