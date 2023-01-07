@@ -31,7 +31,7 @@ jobs:
       - name: Current dir
         run: pwd
       - name: List files
-        run: cd site
+        run: ls -la
       - name: Print image names
         run: find ./site/gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./site/gallery/files.txt
       - name: Checkout
