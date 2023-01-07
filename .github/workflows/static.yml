@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Save image names to file
-        run: find ../fsr-wc-frontend/site/gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ../fsr-wc-frontend/site/gallery/files.txt
+        run: cd site && find ./gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./gallery/files.txt && cd ..
       - name: Check file
         run: cat ./site/gallery/files.txt
       - name: Setup Pages

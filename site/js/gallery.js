@@ -16,7 +16,7 @@ window.onload = async () => {
 	fetch("./gallery/files.txt")
 	.then(res => res.text())
 	.then(text => {
-		files.push(...text.split("\n").filter(item => item !== "").map(item => item.slice(1)))
+		files.push(...text.split("\n").filter(item => item !== ""))
 		files.forEach(item => {
 			const imageContainer = document.createElement("div")
 			imageContainer.className = "image-container"
