@@ -7,6 +7,11 @@
     <title>IMBRA FSR World Championship 2024</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/index.js"></script>
   </head>
   <body>
     <!-- Navbar (sit on top) -->
@@ -19,7 +24,7 @@
           WC 2024
         </a>
         <!-- Float links to the right. Hide them on small screens -->
-        <div class="w3-right w3-hide-small">
+        <div class="w3-right w3-hide-small w3-hide-medium">
           <a href="./gallery.html" class="w3-bar-item w3-button">
             Gallery
           </a>
@@ -34,7 +39,20 @@
           </a>
           <!-- térkép -->
         </div>
+        <div class="w3-right w3-hide-large">
+          <div id="hamburger" class="w3-bar-item w3-button">
+            <i class="fa fa-bars"></i>
+          </div>
+        </div>
       </div>
+    </div>
+    <div id="mobile-menu" style="height: 0;">
+      <a href="./gallery.html" class="w3-bar-item w3-button">Gallery</a>
+      <a href="./accomodation.html" class="w3-bar-item w3-button">
+        Accomodation
+      </a>
+      <a href="" class="w3-bar-item w3-button">Register</a>
+      <a href="./contact.html" class="w3-bar-item w3-button">Contact</a>
     </div>
 
     <!-- Page content -->

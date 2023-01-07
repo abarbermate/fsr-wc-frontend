@@ -27,10 +27,9 @@ window.onload = async () => {
 			}
 		})
 	})
-
+	
 	document.getElementById("hamburger").onclick = () => {
-		console.log(document.getElementById("mobile-menu").style.height)
-		if (document.getElementById("mobile-menu") && document.getElementById("mobile-menu").style.height === 0) {
+		if (document.getElementById("mobile-menu") && document.getElementById("mobile-menu").style.height === "0px") {
 			document.getElementById("mobile-menu").style.height = "auto"
 		}
 		if (document.getElementById("mobile-menu") && document.getElementById("mobile-menu").style.height === "auto") {
