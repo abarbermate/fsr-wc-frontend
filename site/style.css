@@ -1,8 +1,62 @@
+body {
+	position: relative;
+}
+
 #content {
+	margin-top: 54.5px;
+	min-height: calc(100vh - 139px);
+}
+
+#content.centered {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-top: 54.5px;
-	min-height: calc(100vh - 139px);
+}
+
+#gallery-container {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+}
+
+.image-container {
+	cursor: pointer;
+	width: 200px;
+	height: 200px;
+	transition: 0.4s;
+}
+
+.image-container:hover {
+	scale: 1.02;
+}
+
+.image-container:active {
+	scale: 0.98;
+}
+
+#popup {
+	background-color: white;
+	border: none;
+}
+
+dialog::backdrop {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+#popup span {
+	font-weight: 900;
+	padding: 5px 12px 8px;
+	cursor: pointer;
+	margin-left: calc(100% - 30px);
+	background-color: #FFFFFF88;
+}
+
+#popup-image {
+	height: 85vh;
+	width: 90vw;
+	margin-top: 15px;
+	max-width: 100%;
 }
