@@ -2,7 +2,7 @@ const files = []
 let opened = false
 
 const openPopup = (item) => {
-	document.getElementById("popup-image").style.background = `url('${item}') center/contain no-repeat, #000`
+	document.getElementById("popup-image").style.background = `url('${item}') center/contain no-repeat, #000000`
 	document.getElementById("popup").showModal()
 	opened = true
 }

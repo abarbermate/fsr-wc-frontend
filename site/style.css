@@ -16,17 +16,18 @@ body {
 
 #gallery-container {
 	display: flex;
-	width: 100%;
 	flex-wrap: wrap;
 	gap: 16px;
 	justify-content: center;
+	width: 100%;
 }
 
 .image-container {
+	background-color: #000000;
 	cursor: pointer;
-	width: 200px;
-	height: 200px;
+	height: 150px;
 	transition: 0.4s;
+	width: 200px;
 }
 
 .image-container:hover {
@@ -47,16 +48,16 @@ dialog::backdrop {
 }
 
 #popup span {
-	font-weight: 900;
-	padding: 5px 12px 8px;
-	cursor: pointer;
-	margin-left: calc(100% - 30px);
 	background-color: #FFFFFF88;
+	cursor: pointer;
+	font-weight: 900;
+	margin-left: calc(100% - 30px);
+	padding: 5px 12px 8px;
 }
 
 #popup-image {
 	height: 85vh;
-	width: 90vw;
 	margin-top: 15px;
 	max-width: 100%;
+	width: 90vw;
 }
