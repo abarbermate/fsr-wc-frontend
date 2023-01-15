@@ -5,7 +5,7 @@ on:
   push:
     branches: ["main"]
     paths-ignore:
-      - 'site/gallery/files.txt'
+      - 'gallery/files.txt'
   workflow_dispatch:
 
 permissions:
@@ -27,15 +27,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Save image names to file
-        run: cd site && find ./gallery -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) > ./gallery/files.txt && cd ..
+        run: find ./gallery -type f \( -name "*.png" -o -name "*.PNG" -o -name "*.jpg" -o -name "*.JPG" -o -name "*.jpeg" -o -name "*.JPEG" \) > ./gallery/files.txt
       - name: Update resources
         uses: test-room-7/action-update-file@v1.6.0
         with:
-          file-path: site/gallery/files.txt
+          file-path: gallery/files.txt
           commit-msg: Update files.txt
           github-token: ${{ secrets.TOKEN }}
       - name: Check file
-        run: cat ./site/gallery/files.txt
+        run: cat ./gallery/files.txt
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
