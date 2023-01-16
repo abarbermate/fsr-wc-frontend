@@ -42,7 +42,7 @@ footer a:hover {
 
 #content {
   margin-bottom: 32px;
-  margin-top: 54.5px;
+  margin-top: 86.5px;
   min-height: calc(100vh - 171px);
   max-width: 1200px;
 }
@@ -61,7 +61,7 @@ footer a:hover {
 
 #logo-large {
   max-width: 300px;
-  width: 100%;
+  width: 50%;
 }
 
 #gallery-container {
@@ -91,11 +91,21 @@ footer a:hover {
   .image-container {
     max-width: calc(50% - 8px);
   }
+  h2 {
+    font-size: 20px !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .image-container {
     max-width: 100%;
+  }
+  #home-btn b,
+  #home-btn span {
+    display: none;
+  }
+  #logo-large {
+    width: 80%;
   }
 }
 
@@ -141,7 +151,7 @@ i {
   left: 0;
   overflow: hidden;
   position: fixed;
-  top: 0;
+  top: 55px;
   width: 100%;
   transition: 0.4s;
   z-index: 1;
@@ -155,4 +165,8 @@ i {
 
 iframe {
   max-width: 100%;
+}
+
+.w3-bar .w3-bar-item {
+  padding: 8px 12px !important;
 }
