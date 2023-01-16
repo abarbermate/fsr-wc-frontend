@@ -18,9 +18,12 @@ window.onload = async () => {
   fetch('./gallery/files.txt')
     .then((res) => res.text())
     .then((text) => {
-      files.push(...text.split('\n').filter((item) => item !== ''))
+      if ([...text.split('\r\n')].length === 1) {
+        files.push(...text.split('\n').filter((item) => item !== ''))
+      } else {
+        files.push(...text.split('\r\n').filter((item) => item !== ''))
+      }
       files.forEach((item) => {
-        console.log('|' + item + '|')
         const imageContainer = document.createElement('div')
         imageContainer.className = 'image-container'
         imageContainer.onclick = () => openPopup(item)
