@@ -1,5 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
   position: relative;
+  color: #30455c;
+  font-family: 'Montserrat' !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: 'Montserrat' !important;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.fancy-text {
+  background: linear-gradient(90deg, #3bc6f4, #49bfab);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer a:hover {
+  background: linear-gradient(90deg, #3bc6f4, #49bfab);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .w3-top {
@@ -9,7 +43,8 @@ body {
 #content {
   margin-bottom: 32px;
   margin-top: 54.5px;
-  min-height: calc(100vh - 139px);
+  min-height: calc(100vh - 171px);
+  max-width: 1200px;
 }
 
 #content.centered {
@@ -17,6 +52,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#logo-small {
+  width: 40px;
+  margin: -6px 0;
+}
+
+#logo-large {
+  max-width: 300px;
+  width: 100%;
 }
 
 #gallery-container {
@@ -28,11 +73,30 @@ body {
 }
 
 .image-container {
-  background-color: #000000;
+  aspect-ratio: 4/3;
+  background-color: #30455c;
   cursor: pointer;
-  height: 150px;
-  transition: 0.4s;
-  width: 200px;
+  max-width: calc(25% - 16px);
+  transition: scale 0.4s;
+  width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  .image-container {
+    max-width: calc(33.33% - 12px);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .image-container {
+    max-width: calc(50% - 8px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .image-container {
+    max-width: 100%;
+  }
 }
 
 .image-container:hover {
@@ -49,7 +113,7 @@ body {
 }
 
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.6);
+  background: #30455c99;
 }
 
 #popup span {
@@ -73,7 +137,7 @@ i {
 
 #mobile-menu {
   background-color: #ffffff;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 5px 0 #30455c29, 0 2px 10px 0 #30455c1f;
   left: 0;
   overflow: hidden;
   position: absolute;
@@ -84,7 +148,11 @@ i {
 }
 
 #mobile-menu a {
-  border-bottom: 1px solid #00000055;
+  border-bottom: 1px solid #30455c55;
   display: block;
   width: 100%;
+}
+
+iframe {
+  max-width: 100%;
 }
