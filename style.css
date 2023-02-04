@@ -43,8 +43,8 @@ footer a:hover {
 #content {
   margin-bottom: 32px;
   margin-top: 86.5px;
-  min-height: calc(100vh - 203px);
   max-width: 1200px;
+  min-height: calc(100vh - 203px);
 }
 
 #content.centered {
@@ -120,7 +120,7 @@ footer a:hover {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 340px) {
   .image-container {
     max-width: 100%;
   }
@@ -176,8 +176,8 @@ i {
   overflow: hidden;
   position: fixed;
   top: 55px;
-  width: 100%;
   transition: 0.4s;
+  width: 100%;
   z-index: 1;
 }
 
@@ -197,32 +197,34 @@ iframe {
 
 #home-btn {
   display: grid;
-  grid-gap: 0px 16px;
-  margin: 8px 0px;
+  grid-gap: 0px 8px;
   grid-template-areas: 'a b c';
+  height: 55px;
+  margin: 8px 0px;
 }
 
 @media screen and (max-width: 1070px) {
   #home-btn {
-    margin: 0;
     grid-template-areas: 'a b'
                          'a c';
+    margin: 0;
   }
 }
 
 #home-btn img {
-  grid-area: a;
   align-self: center;
+  grid-area: a;
+  margin-right: 8px;
 }
 
 #home-btn b {
+  font-size: small;
   grid-area: b;
   text-align: left;
-  font-size: small;
 } 
 
 #home-btn span {
+  font-size: small;
   grid-area: c;
   text-align: left;
-  font-size: small;
 } 
