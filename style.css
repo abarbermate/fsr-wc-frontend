@@ -175,7 +175,7 @@ i {
   left: 0;
   overflow: hidden;
   position: fixed;
-  top: 55px;
+  top: 71px;
   transition: 0.4s;
   width: 100%;
   z-index: 1;
@@ -227,4 +227,10 @@ iframe {
   font-size: small;
   grid-area: c;
   text-align: left;
-} 
+}
+
+@media screen and (min-width: 993px) {
+  #mobile-menu {
+    max-height: 0px !important;
+  }
+}
