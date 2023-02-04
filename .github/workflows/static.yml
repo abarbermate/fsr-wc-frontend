@@ -5,7 +5,7 @@ on:
   push:
     branches: ["main"]
     paths-ignore:
-      - 'gallery/files.txt'
+      - "gallery/files.txt"
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-jobs:  
+jobs:
   deploy:
     environment:
       name: github-pages
@@ -28,20 +28,24 @@ jobs:
         uses: actions/checkout@v3
       - name: Save image names to file
         run: find ./gallery -type f \( -name "*.png" -o -name "*.PNG" -o -name "*.jpg" -o -name "*.JPG" -o -name "*.jpeg" -o -name "*.JPEG" \) > ./gallery/files.txt
+      - name: Save past image names to file
+        run: find ./gallery-past -type f \( -name "*.png" -o -name "*.PNG" -o -name "*.jpg" -o -name "*.JPG" -o -name "*.jpeg" -o -name "*.JPEG" \) > ./gallery-past/files.txt
       - name: Update resources
         uses: test-room-7/action-update-file@v1.6.0
         with:
-          file-path: gallery/files.txt
+          file-path: |
+            gallery/files.txt
+            gallery-past/files.txt
           commit-msg: Update files.txt
           github-token: ${{ secrets.TOKEN }}
       - name: Check file
-        run: cat ./gallery/files.txt
+        run: echo 'gallery' && cat ./gallery/files.txt && echo 'gallery-past' &&  cat ./gallery-past/files.txt
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.'
+          path: "."
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1

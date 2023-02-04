@@ -1,4 +1,5 @@
 const files = []
+const files_past = []
 let opened = false
 
 const openPopup = (item) => {
@@ -15,6 +16,26 @@ const closePopup = () => {
 }
 
 window.onload = async () => {
+  fetch('./gallery-past/files.txt')
+    .then((res) => res.text())
+    .then((text) => {
+      if ([...text.split('\r\n')].length === 1) {
+        files_past.push(...text.split('\n').filter((item) => item !== ''))
+      } else {
+        files_past.push(...text.split('\r\n').filter((item) => item !== ''))
+      }
+      files_past.forEach((item) => {
+        const imageContainer = document.createElement('div')
+        imageContainer.className = 'image-container'
+        imageContainer.onclick = () => openPopup(item)
+        imageContainer.style.background = `#000000 url('${item}') center/contain no-repeat`
+        if (document.getElementById('gallery-past-container')) {
+          document
+            .getElementById('gallery-past-container')
+            .appendChild(imageContainer)
+        }
+      })
+    })
   fetch('./gallery/files.txt')
     .then((res) => res.text())
     .then((text) => {

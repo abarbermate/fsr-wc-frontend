@@ -54,6 +54,28 @@ footer a:hover {
   justify-content: center;
 }
 
+#content.gallery {
+  display: grid;
+  grid-gap: 16px 32px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'a b'
+                       'c d';
+}
+
+@media screen and (max-width: 992px) {
+  #content.gallery {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'a'
+                         'c'
+                         'b'
+                         'd';
+  }
+
+  #content h1:nth-of-type(2) {
+    margin-top: 80px;
+  }
+}
+
 #logo-small {
   width: 40px;
   margin: -6px 0;
@@ -64,10 +86,12 @@ footer a:hover {
   width: 50%;
 }
 
-#gallery-container {
+#gallery-container,
+#gallery-past-container {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  height: fit-content;
   justify-content: center;
   width: 100%;
 }
@@ -76,7 +100,7 @@ footer a:hover {
   aspect-ratio: 4/3;
   background-color: #30455c;
   cursor: pointer;
-  max-width: calc(25% - 16px);
+  max-width: calc(33.33% - 10.65px);
   transition: scale 0.4s;
   width: 100%;
 }

@@ -75,10 +75,23 @@
     </div>
 
     <!-- Page content -->
-    <div id="content" class="w3-content w3-padding w3-center">
-      <h1><b>Gallery</b></h1>
-      <br />
-      <div id="gallery-container"></div>
+    <div id="content" class="w3-content w3-padding w3-center gallery">
+      <h1 style="grid-area: a"><b>Past</b></h1>
+      <h1 style="grid-area: b"><b>Present</b></h1>
+      <div id="gallery-past-container" style="grid-area: c">
+        <video width="100%" controls autoplay muted>
+          <source
+            src="./gallery-past/frs_nagykanizsa_old_video.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="./gallery-past/frs_nagykanizsa_old_video.ogg"
+            type="video/ogg"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div id="gallery-container" style="grid-area: d"></div>
     </div>
 
     <dialog id="popup">
