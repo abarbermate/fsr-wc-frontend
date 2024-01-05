@@ -15,6 +15,8 @@ h6,
 p,
 a {
   font-family: 'Montserrat' !important;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 footer {
@@ -45,6 +47,7 @@ footer a:hover {
   margin-top: 86.5px;
   max-width: 1200px;
   min-height: calc(100vh - 203px);
+  overflow: hidden;
 }
 
 #content.centered {
@@ -172,6 +175,7 @@ i {
 #mobile-menu {
   background-color: #ffffff;
   box-shadow: 0 2px 5px 0 #30455c29, 0 2px 10px 0 #30455c1f;
+  display: grid;
   left: 0;
   overflow: hidden;
   position: fixed;
@@ -197,17 +201,27 @@ iframe {
 
 #home-btn {
   display: grid;
-  grid-gap: 0px 8px;
+  grid-gap: 0 8px;
   grid-template-areas: 'a b c';
-  margin: 8px 0px;
+  margin: 8px 0;
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 1150px) {
   #home-btn {
     grid-template-areas: 'a b'
                          'a c';
     height: 55px;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .w3-right.w3-hide-large {
+    display: block !important;
+  }
+
+  .w3-right.w3-hide-medium {
+    display: none !important;
   }
 }
 
@@ -227,10 +241,4 @@ iframe {
   font-size: small;
   grid-area: c;
   text-align: left;
-}
-
-@media screen and (min-width: 993px) {
-  #mobile-menu {
-    max-height: 0px !important;
-  }
 }

@@ -5,10 +5,10 @@ window.onload = () => {
         document.getElementById('mobile-menu') &&
         document.getElementById('mobile-menu').style.maxHeight === '0px'
       ) {
-        document.getElementById('mobile-menu').style.maxHeight = '197.5px'
+        document.getElementById('mobile-menu').style.maxHeight = '237px'
       } else if (
         document.getElementById('mobile-menu') &&
-        document.getElementById('mobile-menu').style.maxHeight === '197.5px'
+        document.getElementById('mobile-menu').style.maxHeight === '237px'
       ) {
         document.getElementById('mobile-menu').style.maxHeight = 0
       }
@@ -19,7 +19,7 @@ window.onload = () => {
     if (e.target.id !== 'hamburger' && e.target.id !== 'bars') {
       if (
         document.getElementById('mobile-menu') &&
-        document.getElementById('mobile-menu').style.maxHeight === '197.5px'
+        document.getElementById('mobile-menu').style.maxHeight === '237px'
       ) {
         document.getElementById('mobile-menu').style.maxHeight = 0
       }
